@@ -31,7 +31,7 @@
                         <!-- TODO: add href to post head -->
                         <a ng-if="post.class !== 'blog-post video-post'" class="lightbox" title="{{ post.thumb.title }}">
                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                            <img alt="{{ post.thumb.title }}" src="{{ post.thumb.src }}">
+                            <img alt="{{ post.thumb.title }}" ng-src="{{ post.thumb.src }}" />
                         </a> 
                         <iframe ng-if="post.class === 'blog-post video-post'" ng-src="{{ trustUrl(post.thumb.src) }}" width="711" height="400"></iframe>    
                     </div>
@@ -53,6 +53,65 @@
             </div>
             <!-- End Blog Posts -->
             
+            <!-- Start Sidebar -->
+            <div class="col-md-3 sidebar right-sidebar">
+                
+                <!-- Search Widget -->
+                <div class="widget widget-search">
+                    <form>
+                        <input type="search" placeholder="Enter Keywords..." />
+                        <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                
+                <!-- Categories Widget -->
+                <div class="widget widget-categories">
+                    <h4>Categories <span class="head-line"></span></h4>
+                    <ul>
+                        <li ng-repeat="category in categories">
+                            <a href>{{ category }}</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Popular Posts Widget -->
+                <div class="widget widget-popular-posts">
+                    <h4>Popular Posts <span class="head-line"></span></h4>
+                    <ul>
+                        <li ng-repeat="post in posts">
+                            <div class="widget-thumb">
+                                <a href><img ng-src="{{ post.thumb.src }}" alt="{{ post.thumb.title }}" /></a>
+                            </div>
+                            <div class="widget-content">
+                                <h5><a href>{{ post.title }}</a></h5>
+                                <span>{{ post.date | date: 'MMM d yyyy' }}</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Video Widget -->
+                <div class="widget">
+                    <h4>Video <span class="head-line"></span></h4>
+                    <div>
+                        <!-- Blog Trailer -->
+                        <iframe src="https://www.youtube.com/embed/cXQWdOKedNQ" width="266" height="150"></iframe>
+                    </div>
+                </div>  
+                
+                <!-- Tags Widget -->
+                <div class="widget widget-tags">
+                    <h4>Tags <span class="head-line"></span></h4>
+                    <div class="tagcloud">
+                        <a ng-repeat="tag in tags" href>{{ tag }}</a>
+                    </div>
+                </div>
+                
+            </div>
+                
+            </div>
+            <!-- End Sidebar -->
         </div>
     </div>
 </div>

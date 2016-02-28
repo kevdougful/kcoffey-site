@@ -10,6 +10,29 @@ angular.module('kcoffey-app.blog', ['ngRoute'])
 }])
 
 .controller('BlogCtrl', ['$scope', '$sce', function($scope, $sce) {
+    $scope.categories = [
+        "Photos",
+        "Development",
+        "Miscellany",
+        "Design"    
+    ];
+    
+    $scope.tags = [
+      "Portfolio",
+      "Theme",
+      "Mobile",
+      "Design",
+      "And",
+      "Some",
+      "Other",
+      "Random",
+      "Tags",
+      "Google",
+      "Modern",
+      "CSS",
+      "Jquery"  
+    ];
+        
 	$scope.posts = [
         {
             class: "blog-post image-post",
