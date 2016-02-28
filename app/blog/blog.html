@@ -1,0 +1,60 @@
+<!-- Start Page Banner -->
+<div class="page-banner">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        <h2>Blog</h2>
+        <!--<p>Blog Page With Right Sidebar</p>-->
+        </div>
+        <div class="col-md-6">
+        <ul class="breadcrumbs">
+            <li><a href="#/home">Home</a></li>
+            <li>Blog</li>
+        </ul>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+
+<!-- Start Content -->
+<div id="content">
+    <div class="container">
+        <div class="row blog-page">
+            
+            <!-- Start Blog Posts -->
+            <div class="col-md-9 blog-box">
+                
+                <div ng-repeat="post in posts" ng-class="post.class">
+                    
+                    <div ng-if="post.thumb" class="post-head">
+                        <!-- TODO: add href to post head -->
+                        <a ng-if="post.class !== 'blog-post video-post'" class="lightbox" title="{{ post.thumb.title }}">
+                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                            <img alt="{{ post.thumb.title }}" src="{{ post.thumb.src }}">
+                        </a> 
+                        <iframe ng-if="post.class === 'blog-post video-post'" ng-src="{{ trustUrl(post.thumb.src) }}" width="711" height="400"></iframe>    
+                    </div>
+                    <!-- Post Content -->
+                    <div class="post-content">
+                        <div class="post-type"><i class="{{ 'fa ' + post.icon }}"></i></div>
+                        <h2><a >{{ post.title }}</a></h2>
+                        <ul class="post-meta">
+                            <li>By <a href>{{ post.author }}</a></li>
+                            <li>{{ post.date | date: 'MMM d yyyy' }}</li>
+                            <li><a href ng-repeat="tag in post.tags">{{ tag + ' ' }}</a></li>
+                            <li><a href>{{ post.comments.length + ' Comments'}}</a></li>
+                        </ul>
+                        <p>{{ post.content }}</p>
+                        <a class="main-button" href>Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- End Blog Posts -->
+            
+        </div>
+    </div>
+</div>
+<!-- End Content -->
+        
