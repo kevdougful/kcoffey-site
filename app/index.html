@@ -33,6 +33,8 @@
     <script type="text/javascript" src="lib/js/angular-route.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="login/login.js"></script>
+    <script type="text/javascript" src="login/services/auth.js"></script>
+    <script type="text/javascript" src="login/services/session.js"></script>
     <script type="text/javascript" src="home/home.js"></script>
     <script type="text/javascript" src="contact/contact.js"></script>
     <script type="text/javascript" src="blog/blog.js"></script>
@@ -60,7 +62,7 @@
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 	
-<body ng-app="kcoffey-app">
+<body ng-app="kcoffey-app" ng-controller="AppCtrl">
 
     <!-- Full Body Container -->
     <div id="container">
