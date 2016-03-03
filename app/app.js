@@ -27,6 +27,7 @@ function ($scope, AuthService, Session) {
 }])
 .constant('API', {
     'BASE_URL': 'http://localhost:3000/api',
+    'USERS': '/Users',
     'LOGIN': '/Users/login'
 })
 .constant('AUTH_EVENTS', {

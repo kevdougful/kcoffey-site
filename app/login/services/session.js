@@ -10,20 +10,15 @@ angular.module('kcoffey-app.login')
         }
     };
     
-    this.create = function (token, userId, loginDate, ttl) {
+    this.create = function(user) {
         if (this.loggedIn()) {
+            // Remove existing session cookie
             $cookies.remove('apiSession');
         }
-        
-        $cookies.putObject('apiSession', {
-            token: token,
-            userId: userId,
-            loginDate: loginDate,
-            ttl: ttl 
-        });
+        $cookies.putObject('apiSession', user);
     };
     
-    this.destroy = function () {
+    this.destroy = function() {
         $cookies.remove('apiSession');
     };
     

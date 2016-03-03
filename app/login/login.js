@@ -13,14 +13,21 @@ angular.module('kcoffey-app.login', ['ngRoute'])
 function($scope, $rootScope, AUTH_EVENTS, AuthService) {
 	$scope.credentials = {};
     
+    if (AuthService.activeSession) {
+        $scope.setLoggedIn(true);
+        $scope.setCurrentUser(AuthService.activeSession);
+    }
+    
     $scope.login = function(credentials) {
-        AuthService.login(credentials).then(function (user) {
-            $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-            $scope.setLoggedIn(true);
-            $scope.setCurrentUser(user);
-        }, function () {
-            $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
-        });
+        AuthService.login(credentials)
+            .then(function(user) {
+                $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+                $scope.setLoggedIn(true);
+                $scope.setCurrentUser(user);
+            })
+            .catch(function(err) {
+                $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
+            });
     };
     
     $scope.logout = function() {
