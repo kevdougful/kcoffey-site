@@ -2,7 +2,7 @@
 
 // App level module
 angular.module('kcoffey-app', [
-	'ngRoute',
+	'ngRoute', 'ngCookies',
     'kcoffey-app.login',
 	'kcoffey-app.home',
 	'kcoffey-app.contact',
