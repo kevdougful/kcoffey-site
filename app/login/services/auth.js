@@ -19,8 +19,12 @@ function($http, Session, API) {
         });
     };
     
+    authService.logout = function() {
+        Session.destroy();
+    }
+    
     authService.isAuthenticated = function () {
-        return !!Session.userId;
+        return Session.loggedIn();
     };
     
     return authService;
