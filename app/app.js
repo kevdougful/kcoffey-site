@@ -21,6 +21,12 @@ function ($scope, AuthService, Session) {
         $scope.loggedIn = value;
     };
     
+    $scope.logout = function() {
+        AuthService.logout();
+        $scope.setCurrentUser();
+        $scope.setLoggedIn(false);
+    };
+    
 }])
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.otherwise({redirectTo: '/home'});

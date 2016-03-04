@@ -237,7 +237,20 @@
                                     </li>
                                 </ul>-->
                             </li>
-                            <li><a href="#/contact">Contact</a>
+                            <li>
+                                <a href="#/contact">Contact</a>
+                            </li>
+                            <li>
+                                <a ng-show="!loggedIn" href="#/login">Login</a>
+                                <ul ng-show="!loggedIn" class="dropdown">
+                                    <li><a href="#/login">Login</a></li>
+                                    <li><a href="#/register">Register</a></li>
+                                </ul>
+                                <a ng-show="loggedIn" href >{{ currentUser.username }}</a>
+                                <ul ng-show="loggedIn" class="dropdown">
+                                    <li><a href="#/account">Account</a></li>
+                                    <li><a href ng-click="logout()">Logout</a></li>
+                                </ul>
                             </li>
                         </ul>
                         <!-- End Navigation List -->
