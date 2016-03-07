@@ -2,11 +2,12 @@
 
 // App level module
 angular.module('kcoffey-app', [
-	'ngRoute', 'ngCookies',
+	'ngRoute', 'ngCookies', 'ngSanitize', 'ng-showdown',
     'kcoffey-app.login',
 	'kcoffey-app.home',
 	'kcoffey-app.contact',
-    'kcoffey-app.blog'
+    'kcoffey-app.blog',
+    'kcoffey-app.editor'
 ])
 .controller('AppCtrl', [ '$scope', 'AuthService', 'Session',
 function ($scope, AuthService, Session) {
@@ -34,7 +35,9 @@ function ($scope, AuthService, Session) {
 .constant('API', {
     'BASE_URL': 'http://localhost:3000/api',
     'USERS': '/Users',
-    'LOGIN': '/Users/login'
+    'LOGIN': '/Users/login',
+    'BLOGS': '/blogs',
+    'POSTS': '/posts'
 })
 .constant('AUTH_EVENTS', {
     loginSuccess: 'auth-login-success',

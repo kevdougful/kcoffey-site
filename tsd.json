@@ -9,7 +9,7 @@
       "commit": "945ebfe049964e429c2530971b9081f3c0f611df"
     },
     "jquery/jquery.d.ts": {
-      "commit": "945ebfe049964e429c2530971b9081f3c0f611df"
+      "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
     },
     "node/node.d.ts": {
       "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
@@ -19,6 +19,9 @@
     },
     "angularjs/angular-cookies.d.ts": {
       "commit": "945ebfe049964e429c2530971b9081f3c0f611df"
+    },
+    "bootstrap/bootstrap.d.ts": {
+      "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
     }
   }
 }

@@ -1,0 +1,93 @@
+<!-- Content -->
+<div id="content">
+    <div class="container">
+        <!-- Classic Heading -->
+        <h4 class="classic-title"><span>Post Editor</span></h4>
+
+        <!-- Start Post Editor Form -->
+        
+        <div class="tabs-section">
+            
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href data-target="#edit-tab" data-toggle="tab" ><i class="fa fa-pencil"></i>Markdown</a>
+                <li>
+                <li>
+                    <a href data-target="#preview-tab" data-toggle="tab"><i class="fa fa-eye"></i>Preview</a>
+                </li>
+            </ul>
+            
+            <!-- Start Tab Panels -->
+            <div class="tab-content">
+                
+                <!-- Edit Tab -->
+                <div class="tab-pane fade in active" id="edit-tab">
+                    <form role="form" id="contact-form" ng-submit="savePost(post)" data-toggle="validator" class="shake">
+                        <div class="form-group">
+                            <div class="controls">
+                                <input type="text" required placeholder="Post title" data-error="Title required" ng-model="post.title">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="controls">
+                                <textarea id="message" rows="20" placeholder="Post content" required ng-model="post.content" data-error="Write your post"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <button type="submit" id="submit" class="btn-system btn-large">Post</button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+                
+                <!-- Preview Tab -->
+                <div class="tab-pane fade in" id="preview-tab">
+                    <h1>{{ post.title }}</h1>
+                    <p markdown-to-html="post.content"></p>
+                </div>
+                
+            </div>
+            <!-- End Tab Panels -->
+            
+        </div>
+        
+        <!-- End Post Editor Form -->
+        
+        
+        <!--<form role="form" id="contact-form" data-toggle="validator" class="shake">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" id="name" placeholder="Name" required data-error="Please enter your name">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="controls">
+                    <input type="email" class="email" id="email" placeholder="Email" required data-error="Please enter your email">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" id="msg_subject" placeholder="Subject" required data-error="Please enter your message subject">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="controls">
+                    <textarea id="message" rows="7" placeholder="Message" required data-error="Write your message"></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+
+            <button type="submit" id="submit" class="btn-system btn-large">Send</button>
+            <div id="msgSubmit" class="h3 text-center hidden"></div>
+            <div class="clearfix"></div>
+
+        </form>-->
+        <!-- End Post Editor Form -->
+    </div>
+</div>
+<!-- End content -->
